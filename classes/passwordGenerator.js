@@ -12,11 +12,19 @@ class Password {
     constructor() {
         this.generatePassword = async function (length = 16) {
 
-            if (typeof length !== 'number' || length <= 0) return "";
+            if (
+                typeof length !== 'number' 
+                || length <= 0 
+                || length == null 
+                || length == void 0
+                || length == NaN
+            ) return "";
 
             let password = "";
 
             let characterSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{};:,.<>?/|~`";
+
+            length = Math.floor(length);
 
             for(let i = 0; i < length; i++) {
                 const idx = crypto.randomInt(0, characterSet.length);
@@ -29,5 +37,5 @@ class Password {
 }
 
 module.exports = {
-    Password
+    Password,
 }
