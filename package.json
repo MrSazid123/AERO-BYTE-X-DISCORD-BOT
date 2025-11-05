@@ -12,5 +12,12 @@
     "express": "^5.1.0",
     "glob": "^11.0.3",
     "quick.db": "^9.1.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "node bot.js"
   }
 }
