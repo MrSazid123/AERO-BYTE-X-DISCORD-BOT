@@ -3,3 +3,4 @@ node_modules
 database/json.sqlite
 log/log.txt
 config.env
+coverage

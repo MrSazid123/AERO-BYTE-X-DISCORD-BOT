@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-let { generatePassword } = require("./passwordGenerator");
+let { Password } = require("./passwordGenerator");
 const { glob } = require("glob");
 
 
@@ -15,7 +15,7 @@ class UtilityCollection {
     constructor() {
         //Generate Password
         this.generatePassword = async function (length) {
-            return generatePassword(length)
+            return new Password().generatePassword(length)
         }
 
         //Get random Integer
@@ -34,7 +34,7 @@ class UtilityCollection {
         //Round up Number
         this.roundUp = async function (number, precision) {
             this.roundPrecision = Math.pow(10, precision)
-            return Math.ceil(number * precision) / precision
+            return Math.ceil(number * this.roundPrecision) / this.roundPrecision
         }
 
         //Load Javascript Files and delete their require Cache
