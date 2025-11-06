@@ -28,6 +28,12 @@ describe('Password.generatePassword', () => {
     expect(await pw.generatePassword(-5)).toBe('');
   });
 
+    it('returns empty string for invalid input', async () => {
+    const pw = new Password();
+    expect(await pw.generatePassword("a")).toBe('');
+    expect(await pw.generatePassword("-5")).toBe('');
+  });
+
   it('returns empty string for non-numeric length', async () => {
     const pw = new Password();
     expect(await pw.generatePassword(null)).toBe('');

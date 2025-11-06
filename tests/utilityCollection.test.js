@@ -6,12 +6,12 @@ const os = require('os');
 const { UtilityCollection } = require('../classes/utilityCollection');
 
 describe('UtilityCollection', () => {
-it('generatePassword: returns requested length', async () => {
-  const u = new UtilityCollection();
-  const out = await u.generatePassword(8);
-  expect(typeof out).toBe('string');
-  expect(out).toHaveLength(8);
-});
+  it('generatePassword: returns requested length', async () => {
+    const u = new UtilityCollection();
+    const out = await u.generatePassword(8);
+    expect(typeof out).toBe('string');
+    expect(out).toHaveLength(8);
+  });
 
 
   it('getRandomInteger: returns 0 <= n < max', async () => {
@@ -25,7 +25,7 @@ it('generatePassword: returns requested length', async () => {
     }
   });
 
-    it('getRandomInteger: returns a number with a high max', async () => {
+  it('getRandomInteger: returns a number with a high max', async () => {
     const u = new UtilityCollection();
     const max = Number.MAX_VALUE;
     const n = await u.getRandomInteger(max);
