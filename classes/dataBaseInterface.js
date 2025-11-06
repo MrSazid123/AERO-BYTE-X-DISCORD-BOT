@@ -4,14 +4,16 @@
  */
 
 const { QuickDB } = require('quick.db');
-const database = new QuickDB({ filePath: "database/json.sqlite" })
 
 class DataBaseInterface {
     /**
      * Handles the Communication to the Database
      * 
      */
-    constructor() {
+
+    constructor(filePath = "database/json.sqlite") {
+
+         const database = new QuickDB({ filePath: filePath });
 
         //Add User to Database
         this.setUser = async function (userId, eMail, userName) {
