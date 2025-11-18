@@ -10,7 +10,7 @@
     "dotenv": "^17.2.3",
     "emoji-regex": "^10.2.1",
     "express": "^5.1.0",
-    "glob": "^11.0.3",
+    "glob": "^11.1.0",
     "quick.db": "^9.1.7"
   },
   "devDependencies": {
